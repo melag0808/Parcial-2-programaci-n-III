@@ -1,3 +1,0 @@
-Validación de tareas
-====================
-Red válida: no se detectaron problemas.
