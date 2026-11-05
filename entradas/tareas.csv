@@ -3,3 +3,7 @@ A;3;4;-
 B;2;5;A
 C;4;6;A
 D;1;9;B|C
+
+# Caso inválido para pruebas
+# A;3;4;B
+# B;2;5;A
