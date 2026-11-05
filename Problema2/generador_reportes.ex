@@ -1,16 +1,14 @@
 defmodule GeneradorReportes do
   @moduledoc """
-  Genera los reportes de texto del Problema 2:
+  Genera los reportes de texto del Problema 2.
 
-    * `planes.csv`            -> una fila por plan, escrita a medida que la
-                                 recursión produce cada plan.
-    * `resumen_tareas.txt`    -> total de planes, penalización mínima y los
-                                 planes que la alcanzan.
-    * `validacion_tareas.txt` -> problemas detectados en la validación previa.
+    * `planes.csv`
+    * `resumen_tareas.txt`
+    * `validacion_tareas.txt`
+  """
 
   @separador_orden "->"
   @encabezado_planes "id;orden;duracion_total;penalizacion"
-
   @doc """
   Abre `planes.csv`, escribe el encabezado y devuelve el dispositivo de
   archivo. Se usa antes de iniciar la recursión del planificador.

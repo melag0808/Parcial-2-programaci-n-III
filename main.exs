@@ -52,14 +52,13 @@ defmodule Main do
         "planificador.ex"
       ])
 
-      case Lector.leer_tareas("tareas.csv") do
+      case apply(Lector, :leer_tareas, ["../entradas/tareas.csv"]) do
         {:ok, registros} ->
           {tareas, errores} = validar_tareas(registros)
 
           # "." = los reportes se escriben en la carpeta Problema2
-          tareas
-          |> Planificador.ejecutar(errores, ".")
-          |> mostrar_resultado_2()
+          apply(Planificador, :ejecutar, [tareas, errores, "."])
+        |> mostrar_resultado_2()
 
         {:error, {:archivo_no_encontrado, ruta}} ->
           IO.puts("No existe el archivo de tareas: #{ruta}")
@@ -68,7 +67,7 @@ defmodule Main do
   end
 
   defp validar_tareas(registros) do
-    case Validador.validar(registros, "validacion_tareas.txt") do
+    case apply(Validador, :validar, [registros, "validacion_tareas.txt"]) do
       {:ok, tareas} -> {tareas, []}
       {:error, errores} -> {[], errores}
     end
@@ -109,15 +108,18 @@ defmodule Main do
 
       IO.puts("--- Validación de propuestas ---")
 
-      case ValidadorParentesis.validar_archivo("propuestas.txt", "verificacion_parentesis.txt") do
+      case apply(ValidadorParentesis, :validar_archivo, [
+       "../entradas/propuestas.txt",
+       "verificacion_parentesis.txt"
+     ]) do
         :ok -> IO.puts(File.read!("verificacion_parentesis.txt"))
         {:error, razon} -> IO.puts("No se pudo validar: #{inspect(razon)}\n")
       end
 
       IO.puts("--- Soluciones, primera n=18/p=18 y secuencia ---")
 
-      if File.exists?("parametros.csv") do
-        ReportesParentesis.ejecutar("parametros.csv")
+      if File.exists?("../entradas/parametros.csv") do
+       apply(ReportesParentesis, :ejecutar, ["../entradas/parametros.csv"])
       else
         IO.puts("No existe parametros.csv; no se generan los archivos de soluciones.")
       end

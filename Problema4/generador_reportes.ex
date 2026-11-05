@@ -1,4 +1,4 @@
-defmodule GeneradorReportes do
+defmodule ReportesParentesis do
   @moduledoc """
   Genera todos los archivos de salida del Problema 4:
   informe de validez verificación_parentesis.txt

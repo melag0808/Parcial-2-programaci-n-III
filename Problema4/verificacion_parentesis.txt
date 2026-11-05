@@ -1,0 +1,7 @@
+VERIFICACIÓN DE PARÉNTESIS
+Línea 2: n=3; p=2; (()()) -> VÁLIDA
+Línea 3: n=3; p=2; ((())) -> INVÁLIDA
+  - primer prefijo problemático en posición 2: '(((' (se superó la profundidad máxima permitida 2)
+  - la profundidad alcanzada fue 3, superior al máximo permitido 2
+Línea 4: n=3; p=2; ())(() -> INVÁLIDA
+  - primer prefijo problemático en posición 2: '())' (se cerraron más paréntesis de los que estaban abiertos)

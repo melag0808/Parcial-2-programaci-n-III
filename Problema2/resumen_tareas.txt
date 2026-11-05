@@ -1,0 +1,7 @@
+Resumen de planificación
+========================
+Total de planes válidos: 2
+Penalización mínima: 4
+Tiempo total del proyecto: 10
+Planes que alcanzan la penalización mínima (1):
+  1. A->B->C->D (duración total: 10, penalización: 4)
