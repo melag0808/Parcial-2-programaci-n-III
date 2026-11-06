@@ -91,7 +91,6 @@ defmodule GeneradorSvg do
     :ok
   end
 
-end
 
  # Piezas del dibujo (cada una escribe directamente al archivo)
 
@@ -251,4 +250,5 @@ end
     |> String.replace(">", "&gt;")
     |> String.replace("\"", "&quot;")
 
+end
 end

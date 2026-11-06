@@ -271,9 +271,13 @@ defmodule ValidadorParentesis do
     escribir_motivos(salida, resto)
   end
 
-  defp maximo(a, b) when a >= b, do: a
-  defp maximo(_a, b), do: b
+ defp maximo(a, b) when a >= b, do: a
+defp maximo(_a, b), do: b
 
-  defp invertir([], acumulador), do: acumulador
-  defp invertir([elemento | resto], acumulador), do: invertir(resto, [elemento | acumulador])
+defp invertir([], acumulador), do: acumulador
+
+defp invertir([elemento | resto], acumulador) do
+  invertir(resto, [elemento | acumulador])
+end
+
 end
